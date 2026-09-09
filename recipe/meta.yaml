@@ -11,8 +11,7 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-
+  script: {{ PYTHON }} -m pip install -vv --no-build_isolation . -vv
 
 requirements:
   build:
@@ -21,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - zope.proxy
