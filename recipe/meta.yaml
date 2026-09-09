@@ -1,13 +1,13 @@
 {% set name = "zope.hookable" %}
-{% set version = "8.1" %}
+{% set version = "8.3" %}
 
 package:
   name: {{ name|lower }}
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zope_hookable-{{ version }}.tar.gz
-  sha256: 2e7c22c9eefa831206771f70e2d8b45608d304a87ba771ff99b2358aae214de3
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/zope_hookable-{{ version }}.tar.gz
+  sha256: a05c9f8a4b3f21184cc423dad6116342c1c59818eeb1e4cbdf841f4243952d4f
 
 build:
   number: 0
