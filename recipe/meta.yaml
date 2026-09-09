@@ -1,25 +1,26 @@
 {% set name = "zope.hookable" %}
-{% set version = "5.4" %}
+{% set version = "8.1" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb601f00ac87e5aa582a81315ed96768ce3513280729d3f51f79312e2b8b94ac
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zope_hookable-{{ version }}.tar.gz
+  sha256: 2e7c22c9eefa831206771f70e2d8b45608d304a87ba771ff99b2358aae214de3
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
-
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - zope.proxy
